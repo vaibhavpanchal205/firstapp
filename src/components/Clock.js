@@ -14,7 +14,9 @@ function Clock() {
     }, [time]);   
 
     function showDate() {
-        // console.log(new Date().toString());
+        // console.log(new Date().toStri
+        
+        
         setTime(new Date().toString());
 
     
