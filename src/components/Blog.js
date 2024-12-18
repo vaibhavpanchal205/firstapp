@@ -1,10 +1,8 @@
 function Blog(props){
     const content = props.posts.map((post) => {
-        return(
-            <>
-                <post key={post.id} post={post}/>
-            </>
-        );
+        return<post key={post.id} post={post}/>
+           
+        
     });
 
     return <div>{content}</div>;
