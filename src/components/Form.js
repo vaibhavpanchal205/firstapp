@@ -4,20 +4,39 @@ function Form(){
     const initialValue = {
         name: "",
         email: "",
-        passward: ""
+        passward: "",
     }
     const [formData, setformData] = useState(initialValue);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(JSON.stringify(formData, undefined, 2));
+
+    };
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <label>Name</label>
-            <input type="text" value={formData.name}/>
+            <input 
+                type="text" 
+                value={formData.name}
+                onChange={(e) => setformData({...formData, name: e.target.value})}
+            />
             <br/>
             <label>Email</label>
-            <input type="email" value={formData.email} />
+            <input 
+                type="email" 
+                value={formData.email}
+                onChange={(e) => setformData({...formData, email: e.target.value})}
+            />
             <br/>
-            <label>Password</label>
-            <input type="password" value={formData.password} />
+            <label>Passward</label>
+            <input 
+                type="passward" 
+                value={formData.passward}
+                onChange={(e) => setformData({...formData,passward: e.target.value})} 
+            />
+            <br/>
             <button type="submit">Submit</button>
+            <p>{JSON.stringify(formData)}</p>
         </form>
     )
 
